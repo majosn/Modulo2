@@ -1,5 +1,5 @@
 //programa que trabaja con listas ligadas, contiene las funciones de insertar al inicio, al final, eliminar al inicio y al final.
-//A0000000 X, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario 
+//A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario 
 //04/10/25
 
 #include <iostream>
