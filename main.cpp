@@ -6,29 +6,33 @@
 using namespace std;
 
 template <typename T>
+class Nodo {
+private:
+    T dato;
+    Nodo* next;
 
-Class Nodo{
-   T dato;
-   Nodo* next;
+public:
+    // Constructor
+    Nodo(T dato, Nodo* next = nullptr) {
+        this->dato = dato;
+        this->next = next;
+    }
 
-public;
-  T getDato(){
-     return this ->dato;
-  }
-  void setDato(T dato){
-     this->dato = dato;
-  }
-  Nodo* getNext(){
-     return this->next;
-  }
-  void setNext(Nodo* next){
-     this->next = next;
-  }
-  Nodo(T dato, Nodo* next){
-     this->dato = dato;
-     this->next = next;
-  }
-  
+    T getDato() {
+        return dato;
+    }
+
+    void setDato(T dato) {
+        this->dato = dato;
+    }
+
+    Nodo* getNext() {
+        return next;
+    }
+
+    void setNext(Nodo* next) {
+        this->next = next;
+    }
 };
 
 //Función insertar al inicio
