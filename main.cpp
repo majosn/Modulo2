@@ -38,7 +38,7 @@ public:
 
 //Función insertar al inicio
 template <typename T>
-void inserInicio(Nodo<T>** cabeza, T dato) {
+void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
     Nodo<T>* nuevo = new Nodo<T>(dato);         // O(1)
     nuevo->setNext(*cabeza);                    // O(1)
     *cabeza = nuevo;                            // O(1)
@@ -47,13 +47,31 @@ void inserInicio(Nodo<T>** cabeza, T dato) {
 
 //Función inserta al final
 
+
+
+
 //Función elimina al inicio
+template <typename T>
+void elimina_al_Inicial(Nodo<T>** head) {
+    if(*head == nullptr)
+        cout << "ERROR" << endl;
+    else
+        Nodo<T> * tmp = *head;
+        *head = (*head)->getNext()
+        delete tmp;
+}
 
 //Función elimina al final
 
+
+
+
+
+
+
 //Imprime
 template <typename T>
-void imprime(Nodo<T>* cabeza) {
+void Imprime(Nodo<T>* cabeza) {
     Nodo<T>* actual = cabeza;
     while (actual != nullptr) {                 // O(n)
         cout << actual->getDato() << "\n";
