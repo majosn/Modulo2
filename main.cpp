@@ -52,3 +52,11 @@ void inserInicio(Nodo<T>** cabeza, T dato) {
 //Función elimina al final
 
 //Imprime
+template <typename T>
+void imprime(Nodo<T>* cabeza) {
+    Nodo<T>* actual = cabeza;
+    while (actual != nullptr) {                 // O(n)
+        cout << actual->getDato() << "\n";
+        actual = actual->getNext();
+    }
+}
