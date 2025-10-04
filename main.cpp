@@ -13,6 +13,7 @@ private:
 
 public:
     // Constructor
+    // O(1)
     Nodo(T dato, Nodo* next = nullptr) {
         this->dato = dato;
         this->next = next;
@@ -38,9 +39,9 @@ public:
 //Función insertar al inicio
 template <typename T>
 void inserInicio(Nodo<T>** cabeza, T dato) {
-    Nodo<T>* nuevo = new Nodo<T>(dato);
-    nuevo->setNext(*cabeza);
-    *cabeza = nuevo;
+    Nodo<T>* nuevo = new Nodo<T>(dato);         // O(1)
+    nuevo->setNext(*cabeza);                    // O(1)
+    *cabeza = nuevo;                            // O(1)
 }
 
 
