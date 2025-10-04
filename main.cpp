@@ -45,9 +45,24 @@ void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
 }
 
 
-//Función inserta al final
 
+// Funcion inserta al final
+template <typename T>
+void inserta_al_Final(Nodo<T>** cabeza, T dato) {
+    Nodo<T>* nuevo = new Nodo<T>(dato);          // O(1) 
 
+    if (*cabeza == nullptr) {                    // O(1) 
+        *cabeza = nuevo;                         // O(1) 
+        return;                                  // O(1)
+    }
+
+    Nodo<T>* actual = *cabeza;                   // O(1) 
+    while (actual->getNext() != nullptr) {       // O(n) 
+        actual = actual->getNext();              // O(1) 
+    }
+
+    actual->setNext(nuevo);                      // O(1) 
+}
 
 
 //Función elimina al inicio
