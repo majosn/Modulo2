@@ -52,7 +52,7 @@ void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
 
 //Función elimina al inicio
 template <typename T>
-void elimina_al_Inicial(Nodo<T>** head) {
+void elimina_al_Inicio(Nodo<T>** head) {
     if(*head == nullptr)
         cout << "ERROR" << endl;
     else
@@ -62,7 +62,10 @@ void elimina_al_Inicial(Nodo<T>** head) {
 }
 
 //Función elimina al final
+template <typename T>
+void elimina_al_Final(Nodo<T>** head) {
 
+}
 
 
 
