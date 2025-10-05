@@ -83,7 +83,7 @@ template <typename T>
 void elimina_al_Final(Nodo<T>** cabeza) {
     //si esta vacia
     if (*cabeza == nullptr) {
-        return;
+        cout << "ERROR" << endl;
     }
 
 //eliminacion con un nodo temporal y el previo
