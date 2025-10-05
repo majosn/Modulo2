@@ -84,6 +84,7 @@ void elimina_al_Final(Nodo<T>** cabeza) {
     //si esta vacia
     if (*cabeza == nullptr) {
         cout << "ERROR" << endl;
+        return;
     }
 
 //eliminacion con un nodo temporal y el previo
