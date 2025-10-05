@@ -66,22 +66,46 @@ void inserta_al_Final(Nodo<T>** cabeza, T dato) {
 
 
 //Función elimina al inicio
+//o(1)
 template <typename T>
-void elimina_al_Inicio(Nodo<T>** head) {
-    if(*head == nullptr)
+void Elimina_al_Inicio(Nodo<T>** cabeza) {
+    if(*cabeza == nullptr)
         cout << "ERROR" << endl;
     else
-        Nodo<T> * tmp = *head;
-        *head = (*head)->getNext()
+        Nodo<T> * tmp = *cabeza;
+        *cabeza = (*cabeza)->getNext()
         delete tmp;
 }
 
+
 //Función elimina al final
+//o(n)
 template <typename T>
-void elimina_al_Final(Nodo<T>** head) {
+void Elimina_al_Final(Nodo<T>** cabeza) {
+    if (*cabeza == nullptr) {
+        return;
+    }
+
+    if ((*cabeza)->getNext() == nullptr) {
+        delete *cabeza;
+        *cabeza = nullptr;
+        return;
+    }
+
+    Nodo<T>* tmp = *cabeza;
+
+    Nodo<T>* last = nullptr;
+
+    while (actual->getNext() != nullptr) {
+        last = tmp;
+        tmp = tmp->getNext(); // 'actual' avanza.
+    }
+
+    last->setNext(nullptr);
+
+    delete tmp;
 
 }
-
 
 
 
