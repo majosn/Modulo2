@@ -107,10 +107,6 @@ void Elimina_al_Final(Nodo<T>** cabeza) {
 
 }
 
-
-
-
-
 //Imprime
 template <typename T>
 void Imprime(Nodo<T>* cabeza) {
@@ -119,4 +115,35 @@ void Imprime(Nodo<T>* cabeza) {
         cout << actual->getDato() << "\n";
         actual = actual->getNext();
     }
+}
+
+int main() {
+    int funciones;
+    do {
+        cin >> funciones;
+        switch (funciones) {
+            case 1:
+            //inserta al inicio
+
+                break;
+            case 2:
+            //inserta al final
+
+                break;
+            case 3:
+            //elimina al inicio
+                break;
+            case 4:
+            //elimina al final
+                break;
+            case 5:
+            //salida
+                break;
+            default:
+                break;
+        }
+
+    } while (opcion != 5);
+
+    return 0;
 }
