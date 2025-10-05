@@ -128,7 +128,7 @@ int main() {
             case 2:
             //inserta al final
                 cin >> num;
-                inserta_al_Inicio(&head, num);
+                inserta_al_Final(&head, num);
                 break;
             case 3:
             //elimina al inicio
@@ -139,12 +139,16 @@ int main() {
                 elimina_al_Final(&head);
                 break;
             case 5:
+            //print
+                imprime(head);
+                break;
+            case 0:
             //salida
                 break;
             default:
                 break;
         }
-    } while (funciones != 5);
+    } while (funciones != 0);
 
     //para la memoria ?
 
