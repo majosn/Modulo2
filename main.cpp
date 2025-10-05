@@ -96,7 +96,7 @@ void Elimina_al_Final(Nodo<T>** cabeza) {
 
     Nodo<T>* last = nullptr;
 
-    while (actual->getNext() != nullptr) {
+    while (tmp->getNext() != nullptr) {
         last = tmp;
         tmp = tmp->getNext(); // 'actual' avanza.
     }
