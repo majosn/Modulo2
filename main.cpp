@@ -68,12 +68,12 @@ void inserta_al_Final(Nodo<T>** cabeza, T dato) {
 //Función elimina al inicio
 //o(1)
 template <typename T>
-void Elimina_al_Inicio(Nodo<T>** cabeza) {
+void elimina_al_Inicio(Nodo<T>** cabeza) {
     if(*cabeza == nullptr)
         cout << "ERROR" << endl;
     else
         Nodo<T> * tmp = *cabeza;
-        *cabeza = (*cabeza)->getNext()
+        *cabeza = (*cabeza)->getNext();
         delete tmp;
 }
 
@@ -81,7 +81,7 @@ void Elimina_al_Inicio(Nodo<T>** cabeza) {
 //Función elimina al final
 //o(n)
 template <typename T>
-void Elimina_al_Final(Nodo<T>** cabeza) {
+void elimina_al_Final(Nodo<T>** cabeza) {
     if (*cabeza == nullptr) {
         return;
     }
@@ -94,14 +94,14 @@ void Elimina_al_Final(Nodo<T>** cabeza) {
 
     Nodo<T>* tmp = *cabeza;
 
-    Nodo<T>* last = nullptr;
+    Nodo<T>* prev = nullptr;
 
     while (tmp->getNext() != nullptr) {
-        last = tmp;
-        tmp = tmp->getNext(); // 'actual' avanza.
+        prev = tmp;
+        tmp = tmp->getNext();
     }
 
-    last->setNext(nullptr);
+    prev->setNext(nullptr);
 
     delete tmp;
 
@@ -109,7 +109,7 @@ void Elimina_al_Final(Nodo<T>** cabeza) {
 
 //Imprime
 template <typename T>
-void Imprime(Nodo<T>* cabeza) {
+void imprime(Nodo<T>* cabeza) {
     Nodo<T>* actual = cabeza;
     while (actual != nullptr) {                 // O(n)
         cout << actual->getDato() << "\n";
@@ -118,7 +118,7 @@ void Imprime(Nodo<T>* cabeza) {
 }
 
 int main() {
-    Nodo<int>* UnNodo;
+    Nodo<int>* head = nullptr;
     int funciones;
     int num = 0;
     do {
@@ -140,7 +140,7 @@ int main() {
                 break;
             case 4:
             //elimina al final
-                elinta_al_Final(&head);
+                elimina_al_Final(&head);
                 break;
             case 5:
             //salida
@@ -148,8 +148,17 @@ int main() {
             default:
                 break;
         }
+    } while (funciones != 5);
 
-    } while (opcion != 5);
+    //para la memoria ?
+
+    Nodo<int>* actual = head;
+    while (actual != nullptr) {
+        Nodo<int>* tmp = actual;
+        actual = actual->getNext();
+        delete tmp;
+    }
+    head = nullptr;
 
     return 0;
 }
