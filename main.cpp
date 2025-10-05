@@ -5,6 +5,7 @@
 #include <iostream>
 using namespace std;
 
+//implementacion de template de nodo
 template <typename T>
 class Nodo {
 private:
@@ -66,6 +67,7 @@ void inserta_al_Final(Nodo<T>** cabeza, T dato) {
 //o(1)
 template <typename T>
 void elimina_al_Inicio(Nodo<T>** cabeza) {
+//si esta vacia, else usa el tmp para cambiar el ptr de head
     if(*cabeza == nullptr){
         cout << "ERROR" << endl;
     }else{
@@ -79,18 +81,13 @@ void elimina_al_Inicio(Nodo<T>** cabeza) {
 //o(n)
 template <typename T>
 void elimina_al_Final(Nodo<T>** cabeza) {
+    //si esta vacia
     if (*cabeza == nullptr) {
         return;
     }
 
-    if ((*cabeza)->getNext() == nullptr) {
-        delete *cabeza;
-        *cabeza = nullptr;
-        return;
-    }
-
+//eliminacion con un nodo temporal y el previo
     Nodo<T>* tmp = *cabeza;
-
     Nodo<T>* prev = nullptr;
 
     while (tmp->getNext() != nullptr) {
@@ -99,7 +96,6 @@ void elimina_al_Final(Nodo<T>** cabeza) {
     }
 
     prev->setNext(nullptr);
-
     delete tmp;
 }
 
@@ -114,9 +110,11 @@ void imprime(Nodo<T>* cabeza) {
 }
 
 int main() {
+    //iniciador de head de la lista
     Nodo<int>* head = nullptr;
     int funciones;
     int num = 0;
+    //menu
     do {
         cin >> funciones;
         switch (funciones) {
@@ -150,8 +148,7 @@ int main() {
         }
     } while (funciones != 0);
 
-    //para la memoria ?
-
+    //para la memoria (liberacion)
     Nodo<int>* actual = head;
     while (actual != nullptr) {
        Nodo<int>* tmp = actual;
@@ -159,7 +156,5 @@ int main() {
         delete tmp;
     }
     head = nullptr;
-
     return 0;
-
 }
