@@ -87,6 +87,12 @@ void elimina_al_Final(Nodo<T>** cabeza) {
         return;
     }
 
+    if ((*cabeza)->getNext() == nullptr) {
+    delete *cabeza;
+    *cabeza = nullptr;
+    return;
+}
+
 //eliminacion con un nodo temporal y el previo
     Nodo<T>* tmp = *cabeza;
     Nodo<T>* prev = nullptr;
