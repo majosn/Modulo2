@@ -44,8 +44,6 @@ void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
     *cabeza = nuevo;                            // O(1)
 }
 
-
-
 // Funcion inserta al final
 template <typename T>
 void inserta_al_Final(Nodo<T>** cabeza, T dato) {
@@ -64,19 +62,18 @@ void inserta_al_Final(Nodo<T>** cabeza, T dato) {
     actual->setNext(nuevo);                      // O(1) 
 }
 
-
 //Función elimina al inicio
 //o(1)
 template <typename T>
 void elimina_al_Inicio(Nodo<T>** cabeza) {
-    if(*cabeza == nullptr)
+    if(*cabeza == nullptr){
         cout << "ERROR" << endl;
-    else
-        Nodo<T> * tmp = *cabeza;
+    }else{
+        Nodo<T>* tmp = *cabeza;
         *cabeza = (*cabeza)->getNext();
         delete tmp;
+    }
 }
-
 
 //Función elimina al final
 //o(n)
@@ -104,7 +101,6 @@ void elimina_al_Final(Nodo<T>** cabeza) {
     prev->setNext(nullptr);
 
     delete tmp;
-
 }
 
 //Imprime
@@ -127,12 +123,12 @@ int main() {
             case 1:
             //inserta al inicio
                 cin >> num;
-                inserta_al_Inicio(&head, num)
+                inserta_al_Inicio(&head, num);
                 break;
             case 2:
             //inserta al final
                 cin >> num;
-                inserta_al_Inicio(&head, num)
+                inserta_al_Inicio(&head, num);
                 break;
             case 3:
             //elimina al inicio
@@ -154,7 +150,7 @@ int main() {
 
     Nodo<int>* actual = head;
     while (actual != nullptr) {
-        Nodo<int>* tmp = actual;
+       Nodo<int>* tmp = actual;
         actual = actual->getNext();
         delete tmp;
     }
