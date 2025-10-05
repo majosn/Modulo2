@@ -118,23 +118,29 @@ void Imprime(Nodo<T>* cabeza) {
 }
 
 int main() {
+    Nodo<int>* UnNodo;
     int funciones;
+    int num = 0;
     do {
         cin >> funciones;
         switch (funciones) {
             case 1:
             //inserta al inicio
-
+                cin >> num;
+                inserta_al_Inicio(&head, num)
                 break;
             case 2:
             //inserta al final
-
+                cin >> num;
+                inserta_al_Inicio(&head, num)
                 break;
             case 3:
             //elimina al inicio
+                elimina_al_Inicio(&head);
                 break;
             case 4:
             //elimina al final
+                elinta_al_Final(&head);
                 break;
             case 5:
             //salida
