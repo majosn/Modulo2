@@ -6,6 +6,11 @@
 #include 'lista.h'
 using namespace std;
 
+template <typename T>
+void reverse(){
+
+
+};
 
 
 
@@ -18,6 +23,7 @@ int main() {
     cin >> m;
     cin >> n;
 
+//ciclo para llenar las listas
     for (int i = 0; i < m; i++) {
         int num_m = 0;
         cin >> num_m;
@@ -30,7 +36,9 @@ int main() {
         inserta_al_Inicio(&head2, num_n);
     }
 
-
+//reverse
+//equal
+//concat
 
 
     //para la memoria (liberacion)
