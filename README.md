@@ -1,8 +1,2 @@
-1. Inserta al inicio
-2. Inserta al final
-3. Elimina al inicio
-4. Elimina al final
-5. Imprime
-0. Salir
+<img width="1142" height="867" alt="image" src="https://github.com/user-attachments/assets/69e9b978-f7bc-46a5-bd6c-dde62acbd3f1" />
 
-IMPORTANTE: el menú NO se imprime, solo espera por la entrada del usuario, NO cambiar opciones.
