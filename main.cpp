@@ -1,7 +1,7 @@
-//programa que trabaja con listas ligadas, contiene las funciones de insertar al inicio, al final, eliminar al inicio y al final.
+//programa que trabaja con listas ligadas, contiene las funciones de reverse, equals y concatenar.
 //A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario 
-//04/10/25
-
+//11/10/25
+//editar
 #include <iostream>
 using namespace std;
 
