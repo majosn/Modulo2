@@ -2,8 +2,8 @@
 //A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario
 //11/10/25
 
-#ifndef NODO_H
-#define NODO_H
+#ifndef LISTA_H
+#define LISTA_H
 
 template <typename T>
 class Nodo {
@@ -115,4 +115,4 @@ void imprime(Nodo<T>* cabeza) {
     }
 }
 
-#endif //NODO_H
+#endif //LISTA_H
