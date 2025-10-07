@@ -10,8 +10,25 @@ using namespace std;
 
 
 int main() {
-    //iniciador de head de la lista
-    Nodo<int>* head = nullptr;
+    //iniciadores de las head de la listas
+    Nodo<int>* head1 = nullptr;
+    Nodo<int>* head2 = nullptr;
+
+    cin >> m;
+    cin >> n;
+
+    for (int i = 0; i < m; i++) {
+        int num_m;
+        cin >> num_m;
+        inserta_al_Inicio(&head1, num_m);
+    }
+
+    for (int i = 0; i < n; i++) {
+        int num_n;
+        cin >> num_n;
+        inserta_al_Inicio(&head2, num_n);
+    }
+
     int funciones;
     int num = 0;
     //menu
