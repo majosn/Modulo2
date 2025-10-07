@@ -6,6 +6,7 @@
 #include 'lista.h'
 using namespace std;
 
+//funcion que reversa una lista ligada
 template <typename T>
 void reverse(){
 
