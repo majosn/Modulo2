@@ -1,12 +1,10 @@
-//programa que trabaja con listas ligadas, contiene las funciones de reverse, equals y concatenar.
-//A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario 
+//programa que implementa la clase nodo y hace listas ligadas
+//A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario
 //11/10/25
-//editar
-#include <iostream>
-#include "lista.h"
-using namespace std;
 
-//implementacion de template de nodo
+#ifndef NODO_H
+#define NODO_H
+
 template <typename T>
 class Nodo {
 private:
@@ -49,19 +47,19 @@ void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
 // Funcion inserta al final
 template <typename T>
 void inserta_al_Final(Nodo<T>** cabeza, T dato) {
-    Nodo<T>* nuevo = new Nodo<T>(dato);          // O(1) 
+    Nodo<T>* nuevo = new Nodo<T>(dato);          // O(1)
 
-    if (*cabeza == nullptr) {                    // O(1) 
-        *cabeza = nuevo;                         // O(1) 
+    if (*cabeza == nullptr) {                    // O(1)
+        *cabeza = nuevo;                         // O(1)
         return;                                  // O(1)
     }
 
-    Nodo<T>* actual = *cabeza;                   // O(1) 
-    while (actual->getNext() != nullptr) {       // O(n) 
-        actual = actual->getNext();              // O(1) 
+    Nodo<T>* actual = *cabeza;                   // O(1)
+    while (actual->getNext() != nullptr) {       // O(n)
+        actual = actual->getNext();              // O(1)
     }
 
-    actual->setNext(nuevo);                      // O(1) 
+    actual->setNext(nuevo);                      // O(1)
 }
 
 //Función elimina al inicio
@@ -117,52 +115,4 @@ void imprime(Nodo<T>* cabeza) {
     }
 }
 
-int main() {
-    //iniciador de head de la lista
-    Nodo<int>* head = nullptr;
-    int funciones;
-    int num = 0;
-    //menu
-    do {
-        cin >> funciones;
-        switch (funciones) {
-            case 1:
-            //inserta al inicio
-                cin >> num;
-                inserta_al_Inicio(&head, num);
-                break;
-            case 2:
-            //inserta al final
-                cin >> num;
-                inserta_al_Final(&head, num);
-                break;
-            case 3:
-            //elimina al inicio
-                elimina_al_Inicio(&head);
-                break;
-            case 4:
-            //elimina al final
-                elimina_al_Final(&head);
-                break;
-            case 5:
-            //print
-                imprime(head);
-                break;
-            case 0:
-            //salida
-                break;
-            default:
-                break;
-        }
-    } while (funciones != 0);
-
-    //para la memoria (liberacion)
-    Nodo<int>* actual = head;
-    while (actual != nullptr) {
-       Nodo<int>* tmp = actual;
-        actual = actual->getNext();
-        delete tmp;
-    }
-    head = nullptr;
-    return 0;
-}
+#endif //NODO_H
