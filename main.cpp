@@ -2,6 +2,7 @@
 //A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario 
 //04/10/25
 
+
 #include <iostream>
 using namespace std;
 
