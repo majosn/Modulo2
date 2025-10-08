@@ -43,20 +43,7 @@ int main() {
 
 //reverse
 
-    
 //equal
-    bool equals(Nodo* lista1, Nodo* lista2) {
-    while (lista1 != nullptr && lista2 != nullptr) {
-        if (lista1->dato != lista2->dato) {
-            return false; // Si hay un dato distinto, no son iguales
-        }
-        lista1 = lista1->next;
-        lista2 = lista2->next;
-    }
-
-    // Si ambas llegaron al final al mismo tiempo, son iguales
-    return (lista1 == nullptr && lista2 == nullptr);
-}
     
 //concat
 
