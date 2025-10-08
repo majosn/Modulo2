@@ -4,11 +4,16 @@
 
 #include <iostream>
 #include 'lista.h'
+#include 'stack.h'
 using namespace std;
 
 //funcion que reversa una lista ligada
 template <typename T>
 void reverse(){
+    stack<T> pila;
+    Nodo<T> *h;
+
+
 
 
 };
@@ -22,8 +27,6 @@ int main() {
     Nodo<int>* head2 = nullptr;
 
     cin >> m;
-    cin >> n;
-
 //ciclo para llenar las listas
     for (int i = 0; i < m; i++) {
         int num_m = 0;
@@ -31,6 +34,7 @@ int main() {
         inserta_al_Inicio(&head1, num_m);
     }
 
+    cin >> n;
     for (int i = 0; i < n; i++) {
         int num_n = 0;
         cin >> num_n;

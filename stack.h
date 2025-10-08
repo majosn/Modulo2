@@ -9,35 +9,41 @@
 template <typename T>
 class Stack{
 private:
-    T datos[];
-    T tope;
+    int MAX;
+    T datos[MAX];
+    T top;
 public:
-    Stack( ){
-        tope = -1;
 
+    Stack( ){
+        top = -1;
+    //para un stack vacio
 }
     void push(T Valor){
-        tope++;
-        datos[tope] = valor;
+        top++;
+        datos[top] = valor;
+//push agrega un nuevo elemento; agrega al arreglo el elemento y actualiza el top
     };
 
     T top(){
-        return datos[tope]
+        return datos[top]
+    // regresa el contador de datos agragados al stack
     }
 
-    void pop(){
-        int v = datos[tope];
-        tope--;
+    T pop(){
+        top--;
+        return arr[top+1];
+    //quita un elemento del stack;
     };
 
     bool isEmpty( ){
-        return (tope == -1);
+        return (top == -1);
     };
+//revisa si esta vacio
 
     bool isFull( ){
-        return (tope == MAX-1);
+        return (top == MAX-1);
     }
 };
-
+//revisa si esta lleno
 
 #endif //STACK_H
