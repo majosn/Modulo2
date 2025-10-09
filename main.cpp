@@ -34,20 +34,25 @@ void imprimir(Node* head){
 }
 
 //funcion que reversa una lista ligada
+//todavia no esta lista
 template <typename T>
-void reverse(Nodo<T>* head, int size){
+void reverse(Nodo<T>* head) {
     Stack<T> pila;
-    int MAX = size;
-    Nodo<T> *h2;
-    while(head-> next!=NULL){
-        h2 = head->next;
-        pila.push(head->data);
-        head = h2->next;
-        if(!pila.empty()){
-            inserta_al_Final(&pila, pila.top());
-            }
-        }
-};
+    Nodo<T> *tail;
+    T tmp;
+
+    while(head->getNext()!=NULL) {
+        pila.push(head->getDato());
+        head = tail->getNext();
+        head = head->getNext();
+    }
+    tail = head;
+    while(!pila.isEmpty()) {
+        tmp = pila.pop();
+        tail->setDato(tmp);
+        tail = tmp;
+    }
+}
 
 
 //equal
@@ -96,10 +101,11 @@ int main(){
         inserta_al_Final(&head2, val);
     };
 
-
     //Invertir listas
-    Nodo* rev1= reverse(&head1, m);
-    Nodo* rev2= reverse(&head2, n);
+    reverse(head1);
+    Nodo<int>* rev1 = head1;
+    reverse(head2);
+    Nodo<int>* rev2 = head2;
 
     imprime(rev1);
     imprime(rev2);
