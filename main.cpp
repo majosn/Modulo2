@@ -34,23 +34,23 @@ void imprimir(Node* head){
 }
 
 //funcion que reversa una lista ligada
-//todavia no esta lista
 template <typename T>
 void reverse(Nodo<T>* head) {
+    //los nodos se almacenaran en una pila
     Stack<T> pila;
-    Nodo<T> *tail;
-    T tmp;
+    Nodo<T>* tmp = head;
 
-    while(head->getNext()!=NULL) {
-        pila.push(head->getDato());
-        head = tail->getNext();
-        head = head->getNext();
+    while(tmp!=NULL) {
+        //hasta el ultimo nodo, se agregaran a la pila, invirtiendo el orden
+        pila.push(tmp->getDato());
+        tmp = tmp->getNext();
     }
-    tail = head;
+    tmp = head;
+    // el ultimo nodo se convierte en head
     while(!pila.isEmpty()) {
-        tmp = pila.pop();
-        tail->setDato(tmp);
-        tail = tmp;
+        //hasta que la pila este vacia se vuelven a ligar los nodos
+        tmp->setDato(pila.pop());
+        tmp = tmp->getNext();
     }
 }
 
@@ -109,7 +109,6 @@ int main(){
 
     imprime(rev1);
     imprime(rev2);
-
 
     //Concat reverse list1+ revers list2
 
