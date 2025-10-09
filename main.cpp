@@ -36,19 +36,19 @@ void imprimir(Node* head){
 //funcion que reversa una lista ligada
 template <typename T>
 void reverse(Nodo<T>* head, int size){
-    stack<T> pila;
+    Stack<T> pila;
     int MAX = size;
     Nodo<T> *h2;
     while(head-> next!=NULL){
         h2 = head->next;
         pila.push(head->data);
         head = h2->next;
-        if(pila.!empty()){
+        if(!pila.empty()){
             inserta_al_Final(&pila, pila.top());
             }
         }
-     }
 };
+
 
 //equal
 template <typename T>
@@ -86,32 +86,32 @@ int main(){
     cin>>m;
     for(int i=0; i<m; i++){
         cin>>val;
-        insertaFinal (&head1, val);
+        inserta_al_Final(&head1, val);
     };
 
     //Entrada de lista 2
     cin>>n;
     for (int i=0; i<n; i++){
         cin>>val;
-        insertaFinal (&head2, val);
+        inserta_al_Final(&head2, val);
     };
 
 
     //Invertir listas
-    Node* rev1= reverse(&head1, m);
-    Node* rev2= reverse(&head2, n);
+    Nodo* rev1= reverse(&head1, m);
+    Nodo* rev2= reverse(&head2, n);
 
-    imprimir(rev1);
-    imprimir(rev2);
+    imprime(rev1);
+    imprime(rev2);
 
 
     //Concat reverse list1+ revers list2
 
-    Node* copyRev1= rev1;
-    Node* copyRev2=rev2;
+    Nodo* copyRev1= rev1;
+    Nodo* copyRev2=rev2;
 
     concat(&copyRev2,copyRev1);
-    imprimir (copyRev2);
+    imprime(copyRev2);
 
     /*
     //verificar si las listas son iguales
@@ -119,6 +119,4 @@ int main(){
     */
 
     return 0;
-}
-
 }
