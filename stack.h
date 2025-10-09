@@ -27,7 +27,7 @@ public:
     };
 
     T top(){
-        return datos[top]
+        return datos[top];
     // regresa el contador de datos agragados al stack
     }
 
