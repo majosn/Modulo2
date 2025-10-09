@@ -11,16 +11,16 @@ using namespace std;
 template <typename T>
 class Stack{
 private:
-    extern int MAX;
+    int MAX=100;
     T datos[MAX];
-    T top;
+    T tope;
 public:
 
     Stack( ){
         top = -1;
     //para un stack vacio
 }
-    void push(T Valor){
+    void push(T valor){
         top++;
         datos[top] = valor;
 //push agrega un nuevo elemento; agrega al arreglo el elemento y actualiza el top
@@ -33,7 +33,7 @@ public:
 
     T pop(){
         top--;
-        return arr[top+1];
+        return datos[top+1];
     //quita un elemento del stack;
     };
 
