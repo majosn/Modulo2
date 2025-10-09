@@ -43,6 +43,15 @@ void reverse(){
 };
 
 //equal
+template <typename T>
+bool equals(Nodo<T>* a, Nodo<T>* b) {
+    while (a != nullptr && b != nullptr) {
+        if (a->getDato() != b->getDato()) return false;
+        a = a->getNext();
+        b = b->getNext();
+    }
+    return (a == nullptr && b == nullptr);
+}
     
 //concat
 void concat(Node** l1,  Node* l2){
