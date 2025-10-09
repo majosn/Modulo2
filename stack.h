@@ -11,7 +11,7 @@ using namespace std;
 template <typename T>
 class Stack{
 private:
-    int MAX;
+    extern int MAX;
     T datos[MAX];
     T top;
 public:

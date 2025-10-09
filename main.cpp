@@ -35,8 +35,9 @@ void imprimir(Node* head){
 
 //funcion que reversa una lista ligada
 template <typename T>
-void reverse(Nodo<T>* head){
+void reverse(Nodo<T>* head, int size){
     stack<T> pila;
+    int MAX = size;
     Nodo<T> *h2;
     while(head-> next!=NULL){
         h2 = head->next;
@@ -46,8 +47,8 @@ void reverse(Nodo<T>* head){
             inserta_al_Final(&pila, pila.top());
             }
         }
-     };
-}
+     }
+};
 
 //equal
 template <typename T>
@@ -97,8 +98,8 @@ int main(){
 
 
     //Invertir listas
-    Node* rev1= reverse(&head1);
-    Node* rev2= reverse(&head2);
+    Node* rev1= reverse(&head1, m);
+    Node* rev2= reverse(&head2, n);
 
     imprimir(rev1);
     imprimir(rev2);
