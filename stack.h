@@ -1,9 +1,11 @@
-//
-// Created by majo on 10/7/25.
-//
+//programa que implementa la clase stack
+//A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario
+//11/10/25
 
 #ifndef STACK_H
 #define STACK_H
+using namespace std;
+#include <iostream>
 
 
 template <typename T>

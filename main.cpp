@@ -1,10 +1,10 @@
 //programa que trabaja con listas ligadas, contiene las funciones de reverse, equals y concatenar.
-//A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario 
+//A01739326 Belsy Aislinn Rueda Santiago, A01739755 Michelle Amanda Hernández Legaria, A01736333 María José Serrano Notario
 //11/10/25
 
 #include <iostream>
-#include 'lista.h'
-#include 'stack.h'
+#include "lista.h"
+#include "stack.h"
 using namespace std;
 
 //Funcion insertar al final
@@ -33,14 +33,21 @@ void imprimir(Node* head){
     }
 }
 
-
 //funcion que reversa una lista ligada
 template <typename T>
 void reverse(){
     stack<T> pila;
-    Nodo<T> *h;
+    Nodo<T> *h2;
+    while(head-> next!=NULL){
+        h2 = head->next;
+        pila.push(head->data);
+        head = h2->next;
+        if(pila.!empty()){
+            inserta_al_Final(&pila, pila.top());
+            }
+        }
+     };
 
-};
 
 //equal
 template <typename T>
@@ -52,7 +59,7 @@ bool equals(Nodo<T>* a, Nodo<T>* b) {
     }
     return (a == nullptr && b == nullptr);
 }
-    
+
 //concat
 void concat(Node** l1,  Node* l2){
     if (*l1==nullptr){
@@ -87,15 +94,15 @@ int main(){
         insertaFinal (&list2, val);
     };
 
-    
+
     //Invertir listas
     Node* rev1= reverse(&list1);
     Node* rev2= reverse(&list2);
 
     imprimir(rev1);
     imprimir(rev2);
-    
-    
+
+
     //Concat reverse list1+ revers list2
 
     Node* copyRev1= rev1;

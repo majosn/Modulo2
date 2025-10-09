@@ -4,6 +4,8 @@
 
 #ifndef LISTA_H
 #define LISTA_H
+using namespace std;
+#include <iostream>
 
 template <typename T>
 class Nodo {
