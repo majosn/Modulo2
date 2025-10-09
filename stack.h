@@ -47,5 +47,4 @@ public:
     }
 };
 //revisa si esta lleno
-
 #endif //STACK_H
