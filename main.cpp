@@ -35,7 +35,7 @@ void imprimir(Node* head){
 
 //funcion que reversa una lista ligada
 template <typename T>
-void reverse(){
+void reverse(Nodo<T>* head){
     stack<T> pila;
     Nodo<T> *h2;
     while(head-> next!=NULL){
@@ -47,7 +47,7 @@ void reverse(){
             }
         }
      };
-
+}
 
 //equal
 template <typename T>
@@ -75,8 +75,9 @@ void concat(Node** l1,  Node* l2){
 
 
 int main(){
-    Node* list1= nullptr;
-    Node* list2= nullptr;
+    //iniciadores de las head de la listas
+    Nodo<int>* head1 = nullptr;
+    Nodo<int>* head2 = nullptr;
 
     int m, n, val;
 
@@ -84,20 +85,20 @@ int main(){
     cin>>m;
     for(int i=0; i<m; i++){
         cin>>val;
-        insertaFinal (&list1, val);
+        insertaFinal (&head1, val);
     };
 
     //Entrada de lista 2
     cin>>n;
     for (int i=0; i<n; i++){
         cin>>val;
-        insertaFinal (&list2, val);
+        insertaFinal (&head2, val);
     };
 
 
     //Invertir listas
-    Node* rev1= reverse(&list1);
-    Node* rev2= reverse(&list2);
+    Node* rev1= reverse(&head1);
+    Node* rev2= reverse(&head2);
 
     imprimir(rev1);
     imprimir(rev2);
@@ -118,16 +119,5 @@ int main(){
 
     return 0;
 }
-
-
-    //para la memoria (liberacion)
-    Nodo<int>* actual = head;
-    while (actual != nullptr) {
-       Nodo<int>* tmp = actual;
-        actual = actual->getNext();
-        delete tmp;
-    }
-    head = nullptr;
-    return 0;
 
 }
