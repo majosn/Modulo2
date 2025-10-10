@@ -82,6 +82,8 @@ int main(){
     reverse(head2);
     Nodo<int>* rev2 = head2;
 
+    cout << "\n";
+
     imprime(rev1);
     imprime(rev2);
 
@@ -93,9 +95,9 @@ int main(){
     concat(&copyRev2, copyRev1);
     imprime(copyRev2);
 
-   
-    //verificar si las listas son iguales
-    cout << (equals(rev1, rev2) ? "true" : "false") << "\n";
+    
+    // imprime el resultado de equals AL FINAL
+    cout << (equals(rev1, rev2) ? "true" : "false") << endl;
 
     return 0;
 }
