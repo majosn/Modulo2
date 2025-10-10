@@ -42,16 +42,16 @@ bool equals(Nodo<T>* a, Nodo<T>* b) {
 }
 
 //concat
-void concat(Nodo** l1,  Nodo* l2){
-    if (*l1==nullptr){
-        *l1=l2;
+template <typename T>
+void concat(Nodo<T>** l1, Nodo<T>* l2){
+    if (*l1 == nullptr){
+        *l1 = l2;
         return;
     }
-    Nodo* temp=*l1;
-    while(temp->next !=nullptr)
-        temp=temp->next;
-
-    temp->next=l2;
+    Nodo<T>* temp = *l1;
+    while (temp->getNext() != nullptr)
+        temp = temp->getNext();
+    temp->setNext(l2);
 }
 
 
