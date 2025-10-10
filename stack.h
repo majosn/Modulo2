@@ -21,6 +21,10 @@ public:
         //para un stack vacio
     }
     void push(T valor){
+        if (isFull()){
+        cout << "ERROR: stack lleno" << endl;
+        return;
+    }
         tope++;
         datos[tope] = valor;
         //push agrega un nuevo elemento; agrega al arreglo el elemento y actualiza el top
