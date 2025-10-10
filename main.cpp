@@ -87,10 +87,10 @@ int main(){
 
     //Concat reverse list1+ revers list2
 
-    Nodo* copyRev1= rev1;
-    Nodo* copyRev2=rev2;
+    Nodo<int>* copyRev1 = rev1;
+    Nodo<int>* copyRev2 = rev2;
 
-    concat(&copyRev2,copyRev1);
+    concat(&copyRev2, copyRev1);
     imprime(copyRev2);
 
     /*
