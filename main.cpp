@@ -85,6 +85,8 @@ int main(){
     imprime(rev1);
     imprime(rev2);
 
+    cout << (equals(rev1, rev2) ? "true" : "false") << "\n";
+
     //Concat reverse list1+ revers list2
 
     Nodo<int>* copyRev1 = rev1;
