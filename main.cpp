@@ -7,31 +7,6 @@
 #include "stack.h"
 using namespace std;
 
-//Funcion insertar al final
-void insertaFinal(Node** head, int val) {
-    Node* nuevo = new Node;
-    nuevo->data = val;
-    nuevo->next = nullptr;
-
-    if (*head == nullptr) {
-        *head = nuevo;
-        return;
-    }
-
-    Node* temp = *head;
-    while (temp->next != nullptr)
-        temp = temp->next;
-    temp->next = nuevo;
-}
-
-//Funcion imprimir lista
-void imprimir(Node* head){
-    Node* temp= head;
-    while (temp !=nullptr){
-        cout<< temp-> data<<endl;
-        temp= temp->next;
-    }
-}
 
 //funcion que reversa una lista ligada
 template <typename T>
@@ -67,12 +42,12 @@ bool equals(Nodo<T>* a, Nodo<T>* b) {
 }
 
 //concat
-void concat(Node** l1,  Node* l2){
+void concat(Nodo** l1,  Nodo* l2){
     if (*l1==nullptr){
         *l1=l2;
         return;
     }
-    Node* temp=*l1;
+    Nodo* temp=*l1;
     while(temp->next !=nullptr)
         temp=temp->next;
 
