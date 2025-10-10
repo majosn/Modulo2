@@ -4,16 +4,16 @@
 
 #ifndef STACK_H
 #define STACK_H
-using namespace std;
 #include <iostream>
+using namespace std;
 
 
 template <typename T>
 class Stack{
 private:
-    const static int MAX = 100;
+    static const int MAX = 100;
     T datos[MAX];
-    T tope;
+    int tope;
 public:
 
     Stack( ){
@@ -27,11 +27,21 @@ public:
     };
 
     T top(){
+        // Evita acceder a pila vacía
+        if (isEmpty()){
+            cout << "ERROR: stack vacío" << endl;
+            return T(); // regresa valor por defecto
+            
         return datos[tope];
         // regresa el contador de datos agragados al stack
     }
 
     T pop(){
+        // Evita underflow
+        if (isEmpty()){
+            cout << "ERROR: stack vacío" << endl;
+            return T(); // evita basura
+        }
         tope--;
         return datos[tope+1];
         //quita un elemento del stack;
