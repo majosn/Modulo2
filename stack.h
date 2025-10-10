@@ -31,7 +31,7 @@ public:
         if (isEmpty()){
             cout << "ERROR: stack vacío" << endl;
             return T(); // regresa valor por defecto
-            
+        }
         return datos[tope];
         // regresa el contador de datos agragados al stack
     }
