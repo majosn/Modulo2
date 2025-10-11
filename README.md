@@ -11,9 +11,15 @@
 
 1-Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en una lista doblemente ligada (creada de manera dinámica). *, **
 
-2-Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). ***
+2-Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
+
+***
+ 
+  
   Si hay dos o más accesos desde una misma dirección IP, el segundo criterio de ordenamiento es la fecha y hora de acceso
     En caso de existir otro empate, el tercer criterio es el mensaje de error
+
+
     
 2.2 Agregar a un ABB
     
@@ -21,7 +27,9 @@
 
   y Desplegar los registros correspondientes a esas IPs, en la salida estándar, de manera descendente, por IP (segundo criterio es la fecha y hora, primero los de Dic, Nov, Oct, Sept ).
 
+
 4-Almacenar en un archivo llamado SortedData.txt el resultado del ordenamiento de manera ascendente por IP, (segundo criterio es la fecha Junio, Julio, Agosto, Sept, Oct, ...) mismos criterios de ordenamiento .
+
 
   &Inorden
 
