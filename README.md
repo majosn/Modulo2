@@ -6,7 +6,7 @@ Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en 
 ## 2 - ORDENAR
 Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
 
-*** con merge sort ( me falta confirmar pero creo que si)
+*** con bubble sort ( me falta confirmar pero creo que si)
 
  
   ( en otra funcion)
