@@ -1,5 +1,5 @@
 ** vamos a trabajar con structs
-
+** ya hay un .h con la lista doblemente ligada
 
 1-Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en una lista doblemente ligada (creada de manera dinámica).
 
