@@ -6,8 +6,9 @@ Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en 
 ## 2 - ORDENAR
 Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
 
-*** con merge creo
-  o insertion
+*** con merge creo ( intentenlo ustedes con merge)
+  o insertion ( voy a intentarlo)
+  
   Si hay dos o más accesos desde una misma dirección IP, el segundo criterio de ordenamiento es la fecha y hora de acceso
     En caso de existir otro empate, el tercer criterio es el mensaje de error
 
