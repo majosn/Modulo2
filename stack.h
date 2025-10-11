@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-
+//o(1)
 template <typename T>
 class Stack{
 private:

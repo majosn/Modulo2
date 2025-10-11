@@ -8,6 +8,7 @@
 using namespace std;
 
 //funcion que reversa una lista ligada
+//o(n)
 template <typename T>
 void reverse(Nodo<T>* head) {
     //los nodos se almacenaran en una pila
@@ -30,6 +31,7 @@ void reverse(Nodo<T>* head) {
 
 
 //equal
+//o(n)
 template <typename T>
 bool equals(Nodo<T>* a, Nodo<T>* b) {
     while (a != nullptr && b != nullptr) {
@@ -41,6 +43,7 @@ bool equals(Nodo<T>* a, Nodo<T>* b) {
 }
 
 //concat
+//o(n)
 template <typename T>
 void concat(Nodo<T>** l1, Nodo<T>* l2){
     if (*l1 == nullptr){
