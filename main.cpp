@@ -7,7 +7,6 @@
 #include "stack.h"
 using namespace std;
 
-
 //funcion que reversa una lista ligada
 template <typename T>
 void reverse(Nodo<T>* head) {
