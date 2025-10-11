@@ -1,27 +1,19 @@
-* vamos a trabajar con structs
 
+1-Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en una lista doblemente ligada (creada de manera dinámica). * vamos a trabajar con structs, ** ya hay un .h con la lista doblemente ligada ( creo que ya esta) 
 
-** ya hay un .h con la lista doblemente ligada
-
-
-*** con merge sort ( me falta confirmar pero creo que si)
-
-
-& inorden
-
-1-Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en una lista doblemente ligada (creada de manera dinámica). *, **
 
 2-Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
 
-***
+*** con merge sort ( me falta confirmar pero creo que si)
+
  
-  
+  ( en otra funcion)
   Si hay dos o más accesos desde una misma dirección IP, el segundo criterio de ordenamiento es la fecha y hora de acceso
     En caso de existir otro empate, el tercer criterio es el mensaje de error
 
 
     
-2.2 Agregar a un ABB
+2.2 Agregar structs a un ABB
     
 3-Solicite al usuario las IPs de inicio y fin de búsqueda de información. (la entrada es como un string, primero uno, <enter> y luego otro <enter>)
 
