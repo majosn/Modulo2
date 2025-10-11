@@ -1,3 +1,6 @@
+** vamos a trabajar con structs
+
+
 1-Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en una lista doblemente ligada (creada de manera dinámica).
 
 2-Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético).
