@@ -7,6 +7,14 @@
 #include <iomanip>
 #include <string>
 #include <map>
+#include <fstream>
+#include <vector>
+
+#include "double_LL.h"
+
+using::std::ifstream;
+using std::getline;
+using std::stringstream;
 
 using namespace std;
 
@@ -41,9 +49,28 @@ struct Entrada{
 
 
 
-
+template<typename T>
 int main() {
 
+    Nodo<T>* head = nullptr;
+    Entrada entrada;
+    char sp;
 
+    ifstream txt("bitacora.txt");
+    string linea;
+    while (getline(txt,linea,'\n')) {
+        ifstream doc("bitacora.txt");
+        while(getline(doc,linea)){
+            stringstream ss(linea);
+
+            ss  >> entrada.mes >>entrada.dia >> entrada.hora
+                >> entrada.ip1 >> sp >> entrada.ip2 >> sp
+                >> entrada.ip3 >> sp >> entrada.ip4 >> sp
+                >> entrada.ipPort;
+            getline(ss, entrada.mensaje);
+
+            inserta_al_Final(head&,entrada);
+        }
+    }
 }
 
