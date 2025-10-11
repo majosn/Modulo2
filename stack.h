@@ -33,7 +33,6 @@ public:
     T top(){
         // Evita acceder a pila vacía
         if (isEmpty()){
-            cout << "ERROR: stack vacío" << endl;
             return T(); // regresa valor por defecto
         }
         return datos[tope];
@@ -43,7 +42,6 @@ public:
     T pop(){
         // Evita underflow
         if (isEmpty()){
-            cout << "ERROR: stack vacío" << endl;
             return T(); // evita basura
         }
         tope--;
