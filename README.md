@@ -6,18 +6,14 @@ Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en 
 ## 2 - ORDENAR
 Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
 
-*** con bubble sort ( me falta confirmar pero creo que si)
-
+*** con bubble sort 
  
   ( en otra funcion)
   Si hay dos o más accesos desde una misma dirección IP, el segundo criterio de ordenamiento es la fecha y hora de acceso
     En caso de existir otro empate, el tercer criterio es el mensaje de error
 
 
-## 3 - ABB    ???
-Agregar structs a un ABB
-
-## 4 - INPUT/DISPLAY    
+## 3 - INPUT/DISPLAY    
 Solicite al usuario las IPs de inicio y fin de búsqueda de información. (la entrada es como un string, primero uno, <enter> y luego otro <enter>)
 
   y Desplegar los registros correspondientes a esas IPs, en la salida estándar, de manera descendente, por IP (segundo criterio es la fecha y hora, primero los de Dic, Nov, Oct, Sept ).
