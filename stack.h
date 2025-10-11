@@ -39,6 +39,7 @@ public:
         // regresa el contador de datos agragados al stack
     }
 
+
     T pop(){
         // Evita underflow
         if (isEmpty()){
