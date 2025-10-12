@@ -46,7 +46,23 @@ struct Entrada{
     string mensaje;
 };
 
+bool condiciones(Entrada &e1, Entrada &e2){
+    if (e1.ip1 != e2.ip1) return e1.ip1 < e2.ip1;
+    if (e1.ip2 != e2.ip2) return e1.ip2 < e2.ip2;
+    if (e1.ip3 != e2.ip3) return e1.ip3 < e2.ip3;
+    if (e1.ip4 != e2.ip4) return e1.ip4 < e2.ip4;
 
+
+    // si las ips son iguales, compara por mes
+    if (e1.mes != e2.mes) return e1.mes < e2.mes;
+
+    // si el mes es igual, compara por día
+    if (e1.dia != e2.dia) return e1.dia < e2.dia;
+
+    // si el día es igual, compara por mensaje
+    return e1.mensaje < e2.mensaje;
+
+}
 
 
 template<typename T>
@@ -72,5 +88,27 @@ int main() {
             inserta_al_Final(head&,entrada);
         }
     }
+
+    //llamada a ordena
+
+    ofstream sal("sorted.txt");
+
+    //editar
+    for(auto e://lista ){
+        sal << e.mes << " " << setfill('0') << setw(2) << e.dia << " "
+            << e.hora << " "
+            << e.ip1 << "." << e.ip2 << "."
+            << e.ip3 << "." << e.ip4 << ":"
+            << e.ipPort << e.mensaje << endl;
+    }
+
+    //input del rango de incidentes a buscar
+
+    int mes1 = 1, mes2 = 1, dia1 = 1, dia2 = 1;
+
+    cin >> mes1 >> dia1 >> mes2 >> dia2;
+
+
+
 }
 
