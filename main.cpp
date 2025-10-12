@@ -93,7 +93,7 @@ int main() {
 
     ofstream sal("sorted.txt");
 
-    //editar
+    //editar no esta listo
     for(auto e://lista ){
         sal << e.mes << " " << setfill('0') << setw(2) << e.dia << " "
             << e.hora << " "
