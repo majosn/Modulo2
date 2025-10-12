@@ -6,13 +6,13 @@ Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en 
 ## 2 - ORDENAR
 Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
 
-*** con merge creo ( intentenlo ustedes con merge)
-  o insertion ( voy a intentarlo)
+*** con merge creo 
+  o insertion
   
   Si hay dos o más accesos desde una misma dirección IP, el segundo criterio de ordenamiento es la fecha y hora de acceso
     En caso de existir otro empate, el tercer criterio es el mensaje de error
 
-** tambien voy a hacerlo con un ABB.
+** tambien se puede hacer con un ABB, el lunes le pregunto a dan
 
 ## 3 - INPUT/DISPLAY    
 Solicite al usuario las IPs de inicio y fin de búsqueda de información. (la entrada es como un string, primero uno, <enter> y luego otro <enter>)
