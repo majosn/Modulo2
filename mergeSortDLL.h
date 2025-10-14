@@ -1,5 +1,9 @@
-// Método de los dos punteros (slow y fast)
+#ifndef MERGESORTDLL_H
+#define MERGESORTDLL_H
+#include "double_LL.h"
+using namespace std;
 
+// Método de los dos punteros (slow y fast)
 template <typename T>
 void splitDLL(Nodo<T>* head, Nodo<T>** left, Nodo<T>** right) {
     // Si la lista está vacía o solo tiene un nodo
