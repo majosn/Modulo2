@@ -90,7 +90,8 @@ int main() {
         }
     }
 
-    //llamada a ordena
+    //llamada a ordena: aquí se llamas al merge sort (después de llenar la lista)
+    mergeSortDLL(&head, cmpEntrada);
 
     ofstream sal("sorted.txt");
 
