@@ -1,5 +1,5 @@
 team
 
 A01739326 Belsy Aislinn Rueda Santiago: Listas doblemente ligadas con ordenamiento Merge Sort para entradas de bitácora
-A01739755 Michelle Amanda Hernández Legaria
+A01739755 Michelle Amanda Hernández Legaria:creación de mergeSortDLL.h (Implementación de dos apuntadores y método de MergeSort)
 A01736333 María José Serrano Notario: implementacion listas doblemente ligadas, struct, input txt,
