@@ -55,14 +55,16 @@ bool cmpEntrada(const Entrada &e1, const Entrada &e2) {
     if (e1.ip4 != e2.ip4) return e1.ip4 < e2.ip4;
 
     // Si las IP son iguales, compara por mes
-    if (e1.mes != e2.mes) return e1.mes < e2.mes;
-
+    if (meses[e1.mes] != meses[e2.mes]) return meses[e1.mes] < meses[e2.mes];
     // Si el mes es igual, compara por día
     if (e1.dia != e2.dia) return e1.dia < e2.dia;
 
-    // Si el día también es igual, compara por mensaje
+    // Si el dia es igual, compara por hora
+    if (e1.hora != e2.hora) return e1.hora < e2.hora;
+
     return e1.mensaje < e2.mensaje;
 }
+
 
 
 
@@ -97,6 +99,7 @@ int main() {
 
     // Guardar archivo sorted.txt
     ofstream sal("sorted.txt");
+
     Nodo<Entrada>* temp = head;
     while (temp) {
         Entrada e = temp->getDato();
