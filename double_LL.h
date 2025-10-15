@@ -53,14 +53,13 @@ public:
 template <typename T>
 void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
     Nodo<T>* nuevo = new Nodo<T>(dato);
-
-    if (cabeza == nullptr) {
-        cabeza = nuevo;
+    if (*cabeza == nullptr) {
+        *cabeza = nuevo;
         return;
     }
-    nuevo->next = cabeza;
-    cabeza->prev = nuevo;
-    cabeza = nuevo;
+    nuevo->setNext(*cabeza);
+    (*cabeza)->setPrev(nuevo);
+    *cabeza = nuevo;
 }
 
 
@@ -68,20 +67,16 @@ void inserta_al_Inicio(Nodo<T>** cabeza, T dato) {
 template <typename T>
 void inserta_al_Final(Nodo<T>** cabeza, T dato) {
     Nodo<T>* nuevo = new Nodo<T>(dato);
-
-    if (cabeza == nullptr) {
-        cabeza = nuevo;
+    if (*cabeza == nullptr) {
+        *cabeza = nuevo;
         return;
     }
-
-    Nodo<T>* temp = cabeza;
-    while (temp->next != nullptr) {
-        temp = temp->next;
+    Nodo<T>* temp = *cabeza;
+    while (temp->getNext() != nullptr) {
+        temp = temp->getNext();
     }
-
-    temp->next = nuevo;
-    nuevo->prev = temp;
-
+    temp->setNext(nuevo);
+    nuevo->setPrev(temp);
 }
 
 
@@ -89,17 +84,14 @@ void inserta_al_Final(Nodo<T>** cabeza, T dato) {
 //o(1)
 template <typename T>
 void elimina_al_Inicio(Nodo<T>** cabeza) {
-
-    if (cabeza == nullptr) {
+    if (*cabeza == nullptr) {
         cout << "ERROR" << endl;
         return;
     }
-
-    // Update the head pointer and delete the first node.
-    Nodo<T>* temp = cabeza;
-    cabeza = cabeza->next;
-    if (cabeza != nullptr) {
-        cabeza->prev = nullptr;
+    Nodo<T>* temp = *cabeza;
+    *cabeza = (*cabeza)->getNext();
+    if (*cabeza != nullptr) {
+        (*cabeza)->setPrev(nullptr);
     }
     delete temp;
 }
@@ -109,24 +101,20 @@ void elimina_al_Inicio(Nodo<T>** cabeza) {
 //o(n)
 template <typename T>
 void elimina_al_Final(Nodo<T>** cabeza) {
-
-    if (cabeza == nullptr) {
+    if (*cabeza == nullptr) {
         cout << "ERROR" << endl;
         return;
     }
-
-    Nodo<T>* temp = cabeza;
-    if (temp->next == nullptr) {
-        cabeza = nullptr;
+    Nodo<T>* temp = *cabeza;
+    if (temp->getNext() == nullptr) {
+        *cabeza = nullptr;
         delete temp;
         return;
     }
-
-    while (temp->next != nullptr) {
-        temp = temp->next;
+    while (temp->getNext() != nullptr) {
+        temp = temp->getNext();
     }
-
-    temp->prev->next = nullptr;
+    temp->getPrev()->setNext(nullptr);
     delete temp;
 }
 
@@ -136,12 +124,10 @@ template <typename T>
 void imprime(Nodo<T>* cabeza) {
     Nodo<T>* temp = cabeza;
     while (temp != nullptr) {
-        cout << temp->data << "\n";
-        temp = temp->next;
+        cout << temp->getDato() << "\n";
+        temp = temp->getNext();
     }
     cout << endl;
 }
-
-
 
 #endif //DOUBLE_LL_H
