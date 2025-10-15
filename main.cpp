@@ -47,70 +47,85 @@ struct Entrada{
     string mensaje;
 };
 
-bool condiciones(Entrada &e1, Entrada &e2){
-    if (e1.ip1 != e2.ip1) return e1.ip1 < e2.ip1;
-    if (e1.ip2 != e2.ip2) return e1.ip2 < e2.ip2;
-    if (e1.ip3 != e2.ip3) return e1.ip3 < e2.ip3;
-    if (e1.ip4 != e2.ip4) return e1.ip4 < e2.ip4;
+// Función comparadora para el Merge Sort
+bool cmpEntrada(const Entrada &e1, const Entrada &e2) {
+    if (e1.ip1 != e2.ip1) return e1.ip1 - e2.ip1;
+    if (e1.ip2 != e2.ip2) return e1.ip2 - e2.ip2;
+    if (e1.ip3 != e2.ip3) return e1.ip3 - e2.ip3;
+    if (e1.ip4 != e2.ip4) return e1.ip4 - e2.ip4;
 
+    // Si las IP son iguales, compara por mes
+    if (meses[e1.mes] != meses[e2.mes]) return meses[e1.mes] - meses[e2.mes];
 
-    // si las ips son iguales, compara por mes
-    if (e1.mes != e2.mes) return e1.mes < e2.mes;
+    // Si el mes es igual, compara por día
+    if (e1.dia != e2.dia) return e1.dia - e2.dia;
 
-    // si el mes es igual, compara por día
-    if (e1.dia != e2.dia) return e1.dia < e2.dia;
-
-    // si el día es igual, compara por mensaje
-    return e1.mensaje < e2.mensaje;
-
+    // Si el día también es igual, compara por mensaje
+    return e1.mensaje.compare(e2.mensaje);
 }
 
-
-template<typename T>
 int main() {
-
-    Nodo<T>* head = nullptr;
+    Nodo<Entrada>* head = nullptr;
     Entrada entrada;
-    char sp;
+    string linea;
 
     ifstream txt("bitacora.txt");
-    string linea;
-    while (getline(txt,linea,'\n')) {
-        ifstream doc("bitacora.txt");
-        while(getline(doc,linea)){
-            stringstream ss(linea);
+    if (!txt.is_open()) return 1;
 
-            ss  >> entrada.mes >>entrada.dia >> entrada.hora
-                >> entrada.ip1 >> sp >> entrada.ip2 >> sp
-                >> entrada.ip3 >> sp >> entrada.ip4 >> sp
-                >> entrada.ipPort;
-            getline(ss, entrada.mensaje);
+    while (getline(txt, linea)) {
+        stringstream ss(linea);
+        string ipCompleta;
 
-            inserta_al_Final(head&,entrada);
-        }
+        ss >> entrada.mes >> entrada.dia >> entrada.hora >> ipCompleta;
+        getline(ss, entrada.mensaje);
+        if (!entrada.mensaje.empty() && entrada.mensaje[0] == ' ') entrada.mensaje.erase(0,1);
+
+        // Separar IP y puerto
+        char dot, colon;
+        stringstream ipStream(ipCompleta);
+        ipStream >> entrada.ip1 >> dot >> entrada.ip2 >> dot >> entrada.ip3 >> dot >> entrada.ip4 >> colon >> entrada.ipPort;
+
+        // Insertar en lista
+        insertaFinal(&head, entrada);
     }
+    txt.close();
 
-    //llamada a ordena: aquí se llamas al merge sort (después de llenar la lista)
+    // Ordenar lista ascendente
     mergeSortDLL(&head, cmpEntrada);
 
+    // Guardar archivo sorted.txt
     ofstream sal("sorted.txt");
-
-    //editar no esta listo
-    for(auto e://lista ){
-        sal << e.mes << " " << setfill('0') << setw(2) << e.dia << " "
+    Nodo<Entrada>* temp = head;
+    while (temp) {
+        Entrada e = temp->getDato();
+        sal << e.mes << " " << setw(2) << setfill('0') << e.dia << " "
             << e.hora << " "
-            << e.ip1 << "." << e.ip2 << "."
-            << e.ip3 << "." << e.ip4 << ":"
-            << e.ipPort << e.mensaje << endl;
+            << e.ip1 << "." << e.ip2 << "." << e.ip3 << "." << e.ip4 << ":"
+            << e.ipPort << " " << e.mensaje << endl;
+        temp = temp->getNext();
+    }
+    sal.close();
+
+    // Leer IP inicial y final directamente
+    string ipInicio, ipFin;
+    cin >> ipInicio;
+    cin >> ipFin;
+
+    // Mostrar registros dentro del rango en orden descendente
+    Nodo<Entrada>* tail = head;
+    while (tail && tail->getNext()) tail = tail->getNext();
+
+    while (tail) {
+        Entrada e = tail->getDato();
+        string ipStr = to_string(e.ip1) + "." + to_string(e.ip2) + "." + to_string(e.ip3) + "." + to_string(e.ip4);
+        if (ipStr >= ipInicio && ipStr <= ipFin) {
+            cout << e.mes << " " << setw(2) << setfill('0') << e.dia << " "
+                 << e.hora << " "
+                 << ipStr << ":" << e.ipPort << " " << e.mensaje << endl;
+        }
+        tail = tail->getPrev();
     }
 
-    //input del rango de incidentes a buscar
-
-    int mes1 = 1, mes2 = 1, dia1 = 1, dia2 = 1;
-
-    cin >> mes1 >> dia1 >> mes2 >> dia2;
-
-
-
+    return 0;
 }
 
