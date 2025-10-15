@@ -39,6 +39,12 @@ public:
     void setNext(Nodo* next) {
         this->next = next;
     }
+    Nodo* getPrev() {
+        return prev;
+    }
+    void setPrev(Nodo* prev) {
+        this->prev = prev;
+    }
 };
 
 

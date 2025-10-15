@@ -15,11 +15,13 @@ void splitDLL(Nodo<T>* head, Nodo<T>** left, Nodo<T>** right) {
 
     Nodo<T>* slow = head;
     Nodo<T>* fast = head;
+    //los dos nodos empiezan en el mismo lugar
 
     while (fast->getNext() && fast->getNext()->getNext()) {
         slow = slow->getNext();
         fast = fast->getNext()->getNext();
     }
+    //slow avanza de uno en uno, fast avanza en dos
 
     *left = head;
     *right = slow->getNext();

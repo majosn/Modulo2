@@ -49,20 +49,22 @@ struct Entrada{
 
 // Función comparadora para el Merge Sort
 bool cmpEntrada(const Entrada &e1, const Entrada &e2) {
-    if (e1.ip1 != e2.ip1) return e1.ip1 - e2.ip1;
-    if (e1.ip2 != e2.ip2) return e1.ip2 - e2.ip2;
-    if (e1.ip3 != e2.ip3) return e1.ip3 - e2.ip3;
-    if (e1.ip4 != e2.ip4) return e1.ip4 - e2.ip4;
+    if (e1.ip1 != e2.ip1) return e1.ip1 < e2.ip1;
+    if (e1.ip2 != e2.ip2) return e1.ip2 < e2.ip2;
+    if (e1.ip3 != e2.ip3) return e1.ip3 < e2.ip3;
+    if (e1.ip4 != e2.ip4) return e1.ip4 < e2.ip4;
 
     // Si las IP son iguales, compara por mes
-    if (meses[e1.mes] != meses[e2.mes]) return meses[e1.mes] - meses[e2.mes];
+    if (e1.mes != e2.mes) return e1.mes < e2.mes;
 
     // Si el mes es igual, compara por día
-    if (e1.dia != e2.dia) return e1.dia - e2.dia;
+    if (e1.dia != e2.dia) return e1.dia < e2.dia;
 
     // Si el día también es igual, compara por mensaje
-    return e1.mensaje.compare(e2.mensaje);
+    return e1.mensaje < e2.mensaje;
 }
+
+
 
 int main() {
     Nodo<Entrada>* head = nullptr;
@@ -86,7 +88,7 @@ int main() {
         ipStream >> entrada.ip1 >> dot >> entrada.ip2 >> dot >> entrada.ip3 >> dot >> entrada.ip4 >> colon >> entrada.ipPort;
 
         // Insertar en lista
-        insertaFinal(&head, entrada);
+        inserta_al_Final(&head, entrada);
     }
     txt.close();
 
