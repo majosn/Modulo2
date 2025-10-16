@@ -44,7 +44,7 @@ void inserta_al_Inicio(Nodo<T>** cabeza, const T& dato) {
     *cabeza = nuevo;
 }
 
-/* inserta un nuevo nodo al final de la lista (O(n)) */
+// inserta un nuevo nodo al final de la lista (O(n)) 
 // traduce: recorre toda la lista hasta el final y agrega el nodo ahí
 template <typename T>
 void inserta_al_Final(Nodo<T>** cabeza, const T& dato) {
@@ -59,7 +59,7 @@ void inserta_al_Final(Nodo<T>** cabeza, const T& dato) {
     nuevo->setPrev(t);
 }
 
-/* elimina el primer nodo de la lista (O(1)) */
+// elimina el primer nodo de la lista (O(1)) 
 // traduce: borra el nodo de la cabeza y mueve el inicio al siguiente
 template <typename T>
 void elimina_al_Inicio(Nodo<T>** cabeza) {
@@ -73,7 +73,7 @@ void elimina_al_Inicio(Nodo<T>** cabeza) {
     delete t;
 }
 
-/* elimina el último nodo de la lista (O(n)) */
+// elimina el último nodo de la lista (O(n)) 
 // traduce: recorre hasta el último nodo y lo borra
 template <typename T>
 void elimina_al_Final(Nodo<T>** cabeza) {
