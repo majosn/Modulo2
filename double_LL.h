@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-/* clase nodo que guarda un dato y sus punteros anterior y siguiente (O(1)) */
+// clase nodo que guarda un dato y sus punteros anterior y siguiente (O(1)) 
 template <typename T>
 class Nodo {
 private:
