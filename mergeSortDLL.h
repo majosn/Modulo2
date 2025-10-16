@@ -3,7 +3,7 @@
 
 #include "double_LL.h"
 
-/* divide la lista doble en dos mitades (O(n)) */
+// divide la lista doble en dos mitades (O(n)) 
 // usa dos punteros: slow (avanza 1) y fast (avanza 2)
 // al terminar, slow queda en el centro
 template <typename T>
@@ -30,7 +30,7 @@ void splitDLL(Nodo<T>* head, Nodo<T>** left, Nodo<T>** right) {
     if (*right) (*right)->setPrev(NULL);
 }
 
-/* fusiona dos mitades ya ordenadas (O(n)) */
+// fusiona dos mitades ya ordenadas (O(n)) 
 // compara elemento por elemento y une las dos mitades
 template <typename T>
 Nodo<T>* mergeDLL(Nodo<T>* a, Nodo<T>* b, bool (*cmp)(const T&, const T&)) {
@@ -75,7 +75,7 @@ Nodo<T>* mergeDLL(Nodo<T>* a, Nodo<T>* b, bool (*cmp)(const T&, const T&)) {
     return head;
 }
 
-/* ordena toda la lista usando merge sort (O(n log n)) */
+//ordena toda la lista usando merge sort (O(n log n)) 
 // divide la lista en mitades, ordena recursivamente y fusiona
 template <typename T>
 void mergeSortDLL(Nodo<T>** headRef, bool (*cmp)(const T&, const T&)) {
