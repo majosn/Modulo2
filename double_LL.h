@@ -30,7 +30,7 @@ public:
     void setPrev(Nodo* p) { prev = p; }
 };
 
-/* inserta un nuevo nodo al inicio de la lista (O(1)) */
+// inserta un nuevo nodo al inicio de la lista (O(1)) 
 // traduce: crea el nodo y lo pone como la nueva cabeza
 template <typename T>
 void inserta_al_Inicio(Nodo<T>** cabeza, const T& dato) {
