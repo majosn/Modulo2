@@ -14,7 +14,7 @@
 #include "mergeSortDLL.h"
 using namespace std;
 
-/* traduce los meses del año a número (O(1)) */
+//traduce los meses del año a número (O(1)) 
 static map<string,int> MES;
 static void initMes(){
     MES["Jan"]=1; MES["Feb"]=2; MES["Mar"]=3; MES["Apr"]=4;
@@ -22,14 +22,14 @@ static void initMes(){
     MES["Sep"]=9; MES["Oct"]=10; MES["Nov"]=11; MES["Dec"]=12;
 }
 
-/* estructura que guarda los datos de cada línea (O(1)) */
+// estructura que guarda los datos de cada línea (O(1)) 
 struct Entrada{
     string mes; int dia; string hora;      
     int ip1, ip2, ip3, ip4, ipPort;        
     string mensaje;
 };
 
-/* traduce la ip en una sola clave numérica (O(1)) */
+// traduce la ip en una sola clave numérica (O(1)) 
 static inline unsigned int ipKey(int a,int b,int c,int d){
     return ( (static_cast<unsigned int>(a)<<24) |
              (static_cast<unsigned int>(b)<<16) |
@@ -37,7 +37,7 @@ static inline unsigned int ipKey(int a,int b,int c,int d){
              (static_cast<unsigned int>(d)) );
 }
 
-/* traduce una ip tipo "a.b.c.d" en clave (O(1)) */
+// traduce una ip tipo "a.b.c.d" en clave (O(1)) 
 static bool parseIpToKey(const string& s, unsigned int& key){
     int a,b,c,d; char p1='.',p2='.',p3='.';
     stringstream ss(s);
@@ -48,7 +48,7 @@ static bool parseIpToKey(const string& s, unsigned int& key){
     return true;
 }
 
-/* compara dos entradas (O(1)) */
+// compara dos entradas (O(1)) 
 // compara primero las IP, luego el mes, día, hora y mensaje
 static bool cmpEntrada(const Entrada& e1, const Entrada& e2){
     if(e1.ip1!=e2.ip1) return e1.ip1<e2.ip1;
@@ -74,7 +74,7 @@ int main(){
         return 1;
     }
 
-    /* lee línea por línea del archivo y guarda en la lista (O(n)) */
+    // lee línea por línea del archivo y guarda en la lista (O(n)) 
     string linea;
     while(getline(in,linea)){
         if(linea.empty()) continue;
@@ -108,10 +108,10 @@ int main(){
         return 0;
     }
 
-    /* ordena toda la lista con merge sort (O(n log n)) */
+    // ordena toda la lista con merge sort (O(n log n)) 
     mergeSortDLL(&head, cmpEntrada);
 
-    /* recorre e imprime todo en archivo ascendente (O(n)) */
+    // recorre e imprime todo en archivo ascendente (O(n)) 
     ofstream out("SortedData.txt");
     for(Nodo<Entrada>* t=head; t; t=t->getNext()){
         const Entrada& r=t->getDato();
@@ -121,7 +121,7 @@ int main(){
     }
     out.close();
 
-    /* pide ip inicial y final del rango (O(1)) */
+    //pide ip inicial y final del rango (O(1)) 
     string ipInicio, ipFin;
     if(!(cin>>ipInicio)) return 0;
     if(!(cin>>ipFin))    return 0;
@@ -134,7 +134,7 @@ int main(){
     }
     if(kIni>kFin){ unsigned int tmp=kIni; kIni=kFin; kFin=tmp; }
 
-    /* recorre hasta el final para imprimir en orden descendente (O(n)) */
+    // recorre hasta el final para imprimir en orden descendente (O(n)) 
     Nodo<Entrada>* tail=head;
     while(tail && tail->getNext()) tail=tail->getNext();
 
