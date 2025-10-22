@@ -23,7 +23,7 @@ struct Node {
     }
 };
 
-
+template <typename T>
 Node<T>* inserta(Node<T>* nodo, int dato) {
 
     //si el arbol esta vacio
@@ -43,8 +43,9 @@ Node<T>* inserta(Node<T>* nodo, int dato) {
         nodo->derecha = inserta(nodo->derecha, dato);
         // si es menor agrega a la derecha
     }
-    return node;
+    return Node<T>;
 }
+
 template <typename T>
 void inorden(Node<T>* root) {
     if (root != NULL) {
