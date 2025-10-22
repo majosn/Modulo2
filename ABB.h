@@ -43,7 +43,7 @@ Node<T>* inserta(Node<T>* nodo, int dato) {
         nodo->derecha = inserta(nodo->derecha, dato);
         // si es menor agrega a la derecha
     }
-    return Node<T>;
+    return nodo;
 }
 
 template <typename T>
