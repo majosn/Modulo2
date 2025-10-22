@@ -1,30 +1,65 @@
+<img width="1093" height="409" alt="image" src="https://github.com/user-attachments/assets/822bceca-fc33-44ef-87f5-95c8824f6948" />
 
-## 1 - LEER
-Abra el archivo de entrada llamado "bitacora.txt" lealo y almacene los datos en una lista doblemente ligada (creada de manera dinámica). * vamos a trabajar con structs, ** ya hay un .h con la lista doblemente ligada ( creo que ya esta) 
+<img width="1090" height="535" alt="image" src="https://github.com/user-attachments/assets/4fc612dc-f6a2-4a66-b704-e19025f4cdf5" />
+
+<img width="1102" height="358" alt="image" src="https://github.com/user-attachments/assets/38a8d071-1150-4cdc-b019-5dc55bb417e5" />
+
+entrada:
+
+n // número de nodos a insertar
+n valores enteros
+m // número de nodos a eliminar
+m valores enteros
+q // número de valores a desplegar sus ancestros
+q valores enteros
+r // número de valores a desplegar en que nivel se encuentran
+r valores enteros
+
+salida:
+
+recorrido en preorden, valores separados por exactamente un espacio, el ultimo valor tambien lleva espacio
+recorrido en inorden, valores separados por exactamente un espacio, el ultimo valor tambien lleva espacio
+recorrido en postorden, valores separados por exactamente un espacio, el ultimo valor tambien lleva espacio
+recorrido nivel por nivel, valores separados por exactamente un espacio, el ultimo valor tambien lleva espacio
+valor de la altura total del arbol sin espacios al final
+lista de ancestros de los q valores, separados por exactamente un espacio, el ultimo valor tambien lleva espacio
+lista de enteros representando el nivel de cada uno de los r valores leidos, uno en cada línea, sin espacios al final
 
 
-## 2 - ORDENAR
-Ordene la información por IP para la realización de las búsquedas (CUIDADO con números de dos y tres digitos, orden numérico no alfabético). 
+ejemplo de entrada
+10
+45
+98
+32
+85
+96
+36
+25
+74
+98
+95
+3
+98
+85
+36
+2
+74
+25
+3
+96
+45
+75
 
-*** con merge creo 
-  o insertion
-  
-  Si hay dos o más accesos desde una misma dirección IP, el segundo criterio de ordenamiento es la fecha y hora de acceso
-    En caso de existir otro empate, el tercer criterio es el mensaje de error
 
-** tambien se puede hacer con un ABB, el lunes le pregunto a dan
+ejemplo de salida
 
-## 3 - INPUT/DISPLAY    
-Solicite al usuario las IPs de inicio y fin de búsqueda de información. (la entrada es como un string, primero uno, <enter> y luego otro <enter>)
-
-  y Desplegar los registros correspondientes a esas IPs, en la salida estándar, de manera descendente, por IP (segundo criterio es la fecha y hora, primero los de Dic, Nov, Oct, Sept ).
-
-
-## 4 - SORTERD.TXT
-Almacenar en un archivo llamado SortedData.txt el resultado del ordenamiento de manera ascendente por IP, (segundo criterio es la fecha Junio, Julio, Agosto, Sept, Oct, ...) mismos criterios de ordenamiento .
-
-
-
-Ejemplo de entrada:
-10.50.65.123
-10.50.66.0
+45 32 25 95 74 96
+25 32 45 74 95 96
+25 32 74 96 95 45
+45 32 95 25 74 96
+3
+45 95
+45 32
+2
+0
+-1
